@@ -106,3 +106,32 @@ void printPilhaControle(Pilha* pilha)
     cout << "X" << endl;
 }
 
+int buscaElemPilha(Pilha *pilha, int elm)
+{
+    Node *aux = pilha->topo;
+    while(aux){
+        if(aux->info == elm){
+            return elm;
+        }
+        aux = aux->prox;
+    }
+    return NULL;
+}
+
+void removeElemPilha(Pilha *pilha, int elm){
+    Pilha aux;
+    aux.topo = nullptr;
+    int v = 0;
+    while(!vaziaPilha(pilha)){
+        v = pop(pilha);
+        if(v == elm){
+            break;
+        }
+        push(&aux, v);
+    }
+    while(!vaziaPilha(&aux)){
+        v = pop(&aux);
+        push(pilha, v);
+    }
+}
+

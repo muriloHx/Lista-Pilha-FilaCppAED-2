@@ -13,7 +13,7 @@ int main()
     setlocale(LC_ALL,"");
 
     //código de teste da biblioteca lista.h
-
+    /*
     Node *lista;
     Node *lista2;
 
@@ -26,7 +26,7 @@ int main()
     lista2 = criaLista();
     lista2 = insereOrdLista(lista2,2);
     lista2 = insereOrdLista(lista2,5);
-    /*
+
     lista = removeElemLista(lista,-12);
     lista = removeElemLista(lista,33);
     printLista(lista);
@@ -47,30 +47,24 @@ int main()
     int tam = lenLista(lista);
     cout<< "length eh " << tam;
     */
-    Node *lista3;
-
-    int sb = isSubLista(lista, lista2);
-    cout<< sb;
 
 
 
+    Pilha *p;
 
+    p = criaPilha();
+    push(p,6);
+    push(p,8);
+    push(p,12);
+    push(p,7);
 
+    int teste;
+    teste = buscaElemPilha(p, 12);
+    cout<< "\nbuscar elemento " << teste;
 
+    removeElemPilha(p, 8);
+    printPilhaControle(p);
 
-    /*
-        Pilha *p;
-
-        p = criaPilha();
-        push(p,6);
-        push(p,8);
-        push(p,12);
-        push(p,7);
-        printPilhaControle(p);
-        pop(p);
-        printPilhaControle(p);
-        destroiPilha(p);
-    */
     /*
         Fila *f;
         f = criaFila();
