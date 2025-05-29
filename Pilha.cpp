@@ -135,3 +135,69 @@ void removeElemPilha(Pilha *pilha, int elm){
     }
 }
 
+void removeParesPilha(Pilha *pilha){
+    Pilha *aux = criaPilha();
+    int v = 0;
+    while(!vaziaPilha(pilha)){
+        v = pop(pilha);
+        if(v % 2 != 0){
+            push(aux, v);
+        }
+    }
+    while(!vaziaPilha(aux)){
+        v = pop(aux);
+        push(pilha, v);
+    }
+    delete aux;
+}
+
+Pilha* copiarPilha(Pilha* original) {
+    Pilha* copia = criaPilha();
+    Pilha* aux = criaPilha();
+
+    // Desempilha da original para a auxiliar (inverte a ordem)
+    while(!vaziaPilha(original)) {
+        push(aux, pop(original));
+    }
+
+    // Reempilha na original e na cópia (restaura a ordem)
+    while(!vaziaPilha(aux)) {
+        int valor = pop(aux);
+        push(original, valor);
+        push(copia, valor);
+    }
+
+    delete aux;
+    return copia;
+}
+
+int estaNaPilha(Pilha *pilha, int valor){
+    Pilha *aux = criaPilha();
+    Pilha *copia = copiarPilha(pilha);
+    int x = 0;
+    bool res = 0;
+    while(!vaziaPilha(copia)){
+        x = pop(copia);
+        if(x == valor){
+            res = 1;
+        }
+    }
+    return res;
+}
+
+void removeRepetidoPilha(Pilha *pilha){
+    Pilha *aux = criaPilha();
+    int v = 0;
+    while(!vaziaPilha(pilha)){
+       v = pop(pilha);
+       if(!estaNaPilha(pilha, v)){
+            push(aux,v);
+
+       }
+    }
+        while(!vaziaPilha(aux)){
+        push(pilha, pop(aux));
+    }
+}
+
+

@@ -17,6 +17,8 @@ Node* removeElemLista(Node *lista, int elem);
 Node* buscaElementoLista(Node *lista, int elem);
 void setElementoLista(Node *pEdit, int edit);
 int getElementoLista(Node *pAcess);
+
+//pilhas novas implementadas
 void percorreLista(Node *lista);
 int minLista(Node *lista);
 int maxLista(Node *lista);

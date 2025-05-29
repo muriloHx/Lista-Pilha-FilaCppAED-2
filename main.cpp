@@ -57,13 +57,13 @@ int main()
     push(p,8);
     push(p,12);
     push(p,7);
+    push(p,5);
+    push(p,5);
 
-    int teste;
-    teste = buscaElemPilha(p, 12);
-    cout<< "\nbuscar elemento " << teste;
-
-    removeElemPilha(p, 8);
-    printPilhaControle(p);
+    int t = estaNaPilha(p, 1000);
+    cout<< t;
+    removeRepetidoPilha(p);
+        printPilhaControle(p);
 
     /*
         Fila *f;

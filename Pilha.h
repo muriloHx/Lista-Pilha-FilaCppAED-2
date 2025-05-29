@@ -12,7 +12,12 @@ int top(Pilha* pilha);
 void destroiPilha(Pilha* pilha);
 void printPilhaControle(Pilha* pilha);
 
+//pilhas novas implementadas
 int buscaElemPilha(Pilha *pilha, int elm);
 void removeElemPilha(Pilha *pilha, int elm);
+void removeParesPilha(Pilha *pilha);
+void removeRepetidoPilha(Pilha *pilha);
+int estaNaPilha(Pilha *pilha, int valor);
+Pilha* copiarPilha(Pilha* original);
 
 #endif // PILHA_H
