@@ -59,6 +59,7 @@ int main()
     push(p,7);
     push(p,5);
     push(p,5);
+    push(p, 12);
 
     int t = estaNaPilha(p, 1000);
     cout<< t;

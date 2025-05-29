@@ -173,19 +173,24 @@ Pilha* copiarPilha(Pilha* original) {
 
 int estaNaPilha(Pilha *pilha, int valor){
     Pilha *aux = criaPilha();
-    Pilha *copia = copiarPilha(pilha);
     int x = 0;
     bool res = 0;
-    while(!vaziaPilha(copia)){
-        x = pop(copia);
+    while(!vaziaPilha(pilha)){
+        x = pop(pilha);
+        push(aux, x);
         if(x == valor){
             res = 1;
+            break;
         }
     }
+    while(!vaziaPilha(aux)){
+        push(pilha, pop(aux));
+    }
+    delete aux;
     return res;
 }
 
-void removeRepetidoPilha(Pilha *pilha){
+void removeRepetidoPilha(Pilha *pilha){ //remove os que foram inseridos por ultimo, mais proximos do topo
     Pilha *aux = criaPilha();
     int v = 0;
     while(!vaziaPilha(pilha)){
