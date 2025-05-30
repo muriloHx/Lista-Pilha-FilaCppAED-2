@@ -15,7 +15,7 @@ void printFilaControle(Fila* fila);
 //filas novas implementadas
 int editFila(Fila *fila, int edit, int val); //edit = valor a ser editado, val = novo valor;
 int buscarRemoverFila(Fila *fila, int valor); // val = valor a ser buscado e deletado;
-
+int removerParesFila(Fila *fila);
 
 #endif
 

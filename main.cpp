@@ -70,14 +70,17 @@ int main()
         Fila *f;
         f = criaFila();
         enqueue(f,2);
-        enqueue(f,4);
+        enqueue(f,3);
+        enqueue(f,12);
+        enqueue(f,5);
         enqueue(f,8);
         enqueue(f,12);
         printFilaControle(f);
 
         //editFila(f, 12, 3); printFilaControle(f);
-        int t = buscarRemoverFila(f, 2);
+        int t = removerParesFila(f);
         printFilaControle(f);
+        cout << t;
 
 
 

@@ -131,19 +131,40 @@ int editFila(Fila *fila, int edit, int val){ //edita apenas o primeiro que encon
     return 0;
 }
 
-int buscarRemoverFila(Fila* fila, int valor){
+int buscarRemoverFila(Fila* fila, int valor){ // remove apenas UM elemento, o mais proximo do inicio
     if(vaziaFila(fila)){
         return 0;
     }
     Fila *aux = criaFila();
     int res = 0;
     while(!vaziaFila(fila)){
-        if(fila->inicio->info != valor){
+        if(((fila->inicio)->info != valor) || (res == 1)){
             enqueue(aux, (dequeue(fila)));
+
+        }else{
             res = 1;
-            continue;
+            dequeue(fila);
         }
-        dequeue(fila);
+
+    }
+    while(!vaziaFila(aux)){
+        enqueue(fila, dequeue(aux));
+    }
+    return res;
+}
+int removerParesFila(Fila *fila){
+    if(vaziaFila(fila)){
+        return 0;
+    }
+    Fila *aux = criaFila();
+    int res = 0;
+    while(!vaziaFila(fila)){
+        if((fila->inicio)->info % 2 != 0){
+            enqueue(aux, dequeue(fila));
+        }else{
+            dequeue(fila);
+            res = 1;
+        }
     }
     while(!vaziaFila(aux)){
         enqueue(fila, dequeue(aux));
