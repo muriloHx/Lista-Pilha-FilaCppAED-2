@@ -73,14 +73,18 @@ int main()
         enqueue(f,3);
         enqueue(f,12);
         enqueue(f,5);
-        enqueue(f,8);
-        enqueue(f,12);
+        enqueue(f,15);
+        enqueue(f,15);
         printFilaControle(f);
 
         //editFila(f, 12, 3); printFilaControle(f);
-        int t = removerParesFila(f);
+        //int t = removerParesFila(f);printFilaControle(f);
+
+
+        int t = removerRepetidoFila(f);
         printFilaControle(f);
-        cout << t;
+        cout<< t;
+
 
 
 

@@ -172,6 +172,50 @@ int removerParesFila(Fila *fila){
     return res;
 }
 
+int estaNaFila(Fila *fila, int v){
+    if(vaziaFila(fila)){
+        return 0;
+    }
+    Fila *aux = criaFila();
+    int res = 0, x = 0;
+    while(!vaziaFila(fila)){
+        x = dequeue(fila);
+        if(x == v){
+            res = 1;
+        }
+        enqueue(aux, x);
+    }
+    while(!vaziaFila(aux)){
+        enqueue(fila, dequeue(aux));
+    }
+    delete aux;
+    return res;
+}
+
+int removerRepetidoFila(Fila *fila){
+    if(vaziaFila(fila)){
+        return 0;
+    }
+    Fila *aux = criaFila();
+    int v = 0;
+    int res = 0;
+    while(!vaziaFila(fila)){
+        v = dequeue(fila);
+        if(estaNaFila(fila, v)){
+            continue;
+        }else{
+            enqueue(aux, v);
+            res = 1;
+        }
+    }
+    while(!vaziaFila(aux)){
+        v = dequeue(aux);
+        enqueue(fila, v);
+    }
+    delete aux;
+    return res; // se ha algum repetido, se alterou a fila, retorna 1. caso nao, 0.
+}
+
 
 
 
