@@ -49,7 +49,7 @@ int main()
     */
 
 
-
+/*
     Pilha *p;
 
     p = criaPilha();
@@ -59,22 +59,28 @@ int main()
     push(p,7);
     push(p,5);
     push(p,5);
+    push(p,5);
+    push(p,5);
     push(p, 12);
 
     removeRepetidoPilha(p);
         printPilhaControle(p);
+*/
 
-    /*
         Fila *f;
         f = criaFila();
         enqueue(f,2);
         enqueue(f,4);
         enqueue(f,8);
         enqueue(f,12);
-        dequeue(f);
-        dequeue(f);
         printFilaControle(f);
-    */
+
+        //editFila(f, 12, 3); printFilaControle(f);
+        int t = buscarRemoverFila(f, 2);
+        printFilaControle(f);
+
+
+
     /*
     ArvBB *arv;
     arv = criaABB();

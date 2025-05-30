@@ -115,6 +115,41 @@ void printFilaControle(Fila* fila)
     cout << "X" << endl;
 }
 
+int editFila(Fila *fila, int edit, int val){ //edita apenas o primeiro que encontrar, nao todos
+    if(vaziaFila(fila)){
+        return 0;
+    }
+    Node *aux = fila->inicio;
+
+    while(aux){
+        if(aux->info == edit){
+            aux->info = val;
+            return 1;
+        }
+        aux = aux->prox;
+    }
+    return 0;
+}
+
+int buscarRemoverFila(Fila* fila, int valor){
+    if(vaziaFila(fila)){
+        return 0;
+    }
+    Fila *aux = criaFila();
+    int res = 0;
+    while(!vaziaFila(fila)){
+        if(fila->inicio->info != valor){
+            enqueue(aux, (dequeue(fila)));
+            res = 1;
+            continue;
+        }
+        dequeue(fila);
+    }
+    while(!vaziaFila(aux)){
+        enqueue(fila, dequeue(aux));
+    }
+    return res;
+}
 
 
 
