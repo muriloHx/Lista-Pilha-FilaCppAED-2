@@ -61,8 +61,6 @@ int main()
     push(p,5);
     push(p, 12);
 
-    int t = estaNaPilha(p, 1000);
-    cout<< t;
     removeRepetidoPilha(p);
         printPilhaControle(p);
 

@@ -174,7 +174,7 @@ Pilha* copiarPilha(Pilha* original) {
 int estaNaPilha(Pilha *pilha, int valor){
     Pilha *aux = criaPilha();
     int x = 0;
-    bool res = 0;
+    int res = 0;
     while(!vaziaPilha(pilha)){
         x = pop(pilha);
         push(aux, x);
